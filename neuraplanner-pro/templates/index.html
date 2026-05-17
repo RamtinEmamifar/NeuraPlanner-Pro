@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuraPlanner Pro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+
+        <header class="hero">
+            <div class="brand">
+                <span class="brand-mark"></span>
+                <span class="brand-name">NEURAPLANNER</span>
+                <span class="brand-tag">pro</span>
+            </div>
+            <h1 class="title">
+                Plan your day, <em>not your week.</em>
+            </h1>
+            <p class="subtitle">A focused planner that turns your task list into a structured day. No noise, no streaks, no nonsense.</p>
+        </header>
+
+        <!-- /01 Progress -->
+        <section class="panel">
+            <div class="panel-head">
+                <span class="label">/01 — Progress</span>
+                <span class="meta" id="progress-meta">0 of 0 completed</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-stats">
+                <span class="stat"><strong id="stat-percent">0%</strong> done</span>
+                <span class="stat"><strong id="stat-remaining">0</strong> remaining</span>
+            </div>
+        </section>
+
+        <!-- /02 New task -->
+        <section class="panel">
+            <div class="panel-head">
+                <span class="label">/02 — New task</span>
+            </div>
+            <form class="task-form" id="task-form" autocomplete="off">
+                <input type="text" id="task-title" placeholder="What needs to get done?" maxlength="120" required>
+                <select id="task-priority" aria-label="Priority">
+                    <option value="low">low</option>
+                    <option value="medium" selected>medium</option>
+                    <option value="high">high</option>
+                </select>
+                <button type="submit">Add task →</button>
+            </form>
+        </section>
+
+        <!-- /03 Today's plan -->
+        <section class="panel">
+            <div class="panel-head">
+                <span class="label">/03 — Today's plan</span>
+                <button class="ghost-btn" id="regenerate-plan">Regenerate</button>
+            </div>
+            <ol class="plan-list" id="plan-list">
+                <li class="plan-empty">Add a task to generate your plan.</li>
+            </ol>
+        </section>
+
+        <!-- /04 All tasks -->
+        <section class="panel">
+            <div class="panel-head">
+                <span class="label">/04 — All tasks</span>
+            </div>
+            <ul class="task-list" id="task-list">
+                <li class="task-empty">No tasks yet.</li>
+            </ul>
+        </section>
+
+        <footer class="footer">
+            <span>Built with Flask &amp; vanilla JS</span>
+            <span>v1.0</span>
+        </footer>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
