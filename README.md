@@ -68,7 +68,7 @@ neuraplanner-pro/
 ### 1. Clone and enter the project
 
 ```bash
-git clone https://github.com/<your-username>/neuraplanner-pro.git
+git clone https://github.com/<RamtinEmamifar>/neuraplanner-pro.git
 cd neuraplanner-pro
 ```
 
